@@ -1,5 +1,5 @@
 /* import shared library. */
-@library('chocoapp-slack-share-library')_
+/*@library('chocoapp-slack-share-library')_ */
 
 pipeline {
   environment {
