@@ -1,6 +1,3 @@
-/* import shared library. */
-/*@library('chocoapp-slack-share-library')_ */
-
 pipeline {
   environment {
     IMAGE_NAME = "staticwebsite"
@@ -79,7 +76,7 @@ pipeline {
         script {
           sh '''
             heroku container:login
-            heroku container $STAGING || echo "project already exists"
+            heroku apps:info -a $STAGING || heroku create $STAGING
             heroku container:push -a $STAGING web
             heroku container:release -a $STAGING web
           '''
@@ -98,7 +95,7 @@ pipeline {
         script {
           sh '''
             heroku container:login
-            heroku container $PRODUCTION || echo "project already exists"
+            heroku apps:info -a $PRODUCTION || heroku create $PRODUCTION
             heroku container:push -a $PRODUCTION web
             heroku container:release -a $PRODUCTION web
           '''
