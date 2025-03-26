@@ -7,8 +7,8 @@ pipeline {
     APP_CONTAINER_PORT = "5000"
     APP_EXPOSED_PORT = "80"
     IMAGE_TAG = "latest"
-    STAGING = "chocoapp-staging"
-    PRODUCTION = "chocoapp-prod"
+    STAGING = "chocoapp-staging-123"
+    PRODUCTION = "chocoapp-prod-123"
     DOCKERHUB_ID = "walidmajdoubi"
     DOCKERHUB_PASSWORD = credentials('dockerhub_password')
   }
